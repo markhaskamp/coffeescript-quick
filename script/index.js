@@ -7,15 +7,15 @@ $(document).ready(function() {
   line_3 = 'kilroy was here';
   line_4 = '';
   if (first_div.input_string_is_valid(line_1)) {
-    first_div.append_text('eddie would go');
+    first_div.append_text(line_1);
   }
   if (first_div.input_string_is_valid(line_2)) {
-    first_div.append_text('we excel on ice');
+    first_div.append_text(line_2);
   }
   if (second_div.input_string_is_valid(line_3)) {
-    second_div.append_text('kilroy was here');
+    second_div.append_text(line_3);
   }
   if (second_div.input_string_is_valid(line_4)) {
-    return second_div.append_text('kilroy was here');
+    return second_div.append_text(line_4);
   }
 });
