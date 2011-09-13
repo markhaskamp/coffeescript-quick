@@ -1,8 +1,10 @@
 class SecondDivView
 
-  div_template = '<div class="second_div_line"><span>${s}</span></div>'
+  div_template = '<li class="second_div_line">${s}</li>'
 
   append_text: (s) ->
-    json_struct = {'s': s}
-    $.tmpl(div_template, json_struct).appendTo('#second_div')
+    $.tmpl(div_template, {'s': s}).appendTo('#second_div')
+
+  input_string_is_valid: (s) ->
+    return (s.trim().length > 0)
 

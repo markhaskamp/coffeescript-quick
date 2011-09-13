@@ -2,13 +2,14 @@ var SecondDivView;
 SecondDivView = (function() {
   var div_template;
   function SecondDivView() {}
-  div_template = '<div class="second_div_line"><span>${s}</span></div>';
+  div_template = '<li class="second_div_line">${s}</li>';
   SecondDivView.prototype.append_text = function(s) {
-    var json_struct;
-    json_struct = {
+    return $.tmpl(div_template, {
       's': s
-    };
-    return $.tmpl(div_template, json_struct).appendTo('#second_div');
+    }).appendTo('#second_div');
+  };
+  SecondDivView.prototype.input_string_is_valid = function(s) {
+    return s.trim().length > 0;
   };
   return SecondDivView;
 })();

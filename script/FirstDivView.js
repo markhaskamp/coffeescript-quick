@@ -2,13 +2,14 @@ var FirstDivView;
 FirstDivView = (function() {
   var div_template;
   function FirstDivView() {}
-  div_template = '<div class="first_div_line"><span>${s}</span></div>';
+  div_template = '<li class="first_div_line">${s}</li>';
   FirstDivView.prototype.append_text = function(s) {
-    var json_struct;
-    json_struct = {
+    return $.tmpl(div_template, {
       's': s
-    };
-    return $.tmpl(div_template, json_struct).appendTo('#first_div');
+    }).appendTo('#first_div');
+  };
+  FirstDivView.prototype.input_string_is_valid = function(s) {
+    return s.trim().length > 0;
   };
   return FirstDivView;
 })();
